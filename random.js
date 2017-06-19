@@ -13,13 +13,13 @@ app.get('/lorem/:num', function (req, res) {
 var finalString = '<html><body>';
 var loremLoop = function(){
 	for (i = 0; i < req.params.num; i++) { 
-    var loremTemp = loremIpsum({units: 'paragraphs'});
-    finalString = finalString + '<p>' + loremTemp + '</p>';
+    	var loremTemp = loremIpsum({units: 'paragraphs'});
+    	finalString = finalString + '<p>' + loremTemp + '</p>';
 	}
 	finalString = finalString + '</body></html>';
 }
 loremLoop();
-res.send(finalString);
+res.send('<p>You requested ' + req.params.num + ' paragraphs of nonsense. Here you go I guess.</p>' + finalString);
 });
 
 app.listen(3000, function () {
