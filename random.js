@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 var loremIpsum = require('lorem-ipsum')
 
-app.get('/', function (req, res) {
+app.get('/lorem', function (req, res) {
 	const lorem1 = loremIpsum({units: 'paragraphs'});
 	const lorem2 = loremIpsum({units: 'paragraphs'});
 	const lorem3 = loremIpsum({units: 'paragraphs'});
